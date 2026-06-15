@@ -1,0 +1,38 @@
+import sys
+''' List-
+1. list is mutable
+2.syntax 
+    list_1=[1,2,3,'a']
+3.Iteration over lists is time-consuming.
+4.Lists are better for insertion and deletion operations.
+5.Lists consume more memory.
+6.Lists have several built-in methods.'''
+#list examples
+list_1=[1,2,'x',4]
+print(list_1)
+
+'''
+Tuple -
+1.Tuple is immutable
+2. Syntax t={1,2,3,'a',4}
+3.Iteration over lists is faster
+4.Tuples are more suitable for accessing elements efficiently.
+5.Tuples consume less memory.
+6.Tuples have fewer built-in methods.
+'''
+#example of touple
+t=(7,8,9)
+print("tuple",t)
+
+
+#mutable example of list
+list_1[1]='test'
+print('updated list',list_1)
+
+#immutable example of tuple
+#t[1]='a' #it will throw error as - TypeError: 'tuple' object does not support item assignment
+print('updated tuple',t) 
+
+#performance analysis
+print(sys.getsizeof(list_1))
+print(sys.getsizeof(t))

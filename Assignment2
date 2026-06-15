@@ -1,0 +1,55 @@
+#difference between shallow copy and deep copy
+'''
+A shallow copy in Python creates a new outer object, but it still references the same nested or mutable elements from the original.
+ This means nested or mutable elements remain linked to the original.
+ copy() method is used to create shallow copy.
+ 
+
+ In contrast, a deep copy creates a completely independent clone, including all nested objects.
+  Modifying the deep copy will have no effect on the original structure.
+  copy.deepcopy() method is used to create deep copy.
+  '''
+  #example of shallow copy
+  
+a=[[2,5,4,6],[8,9,7,8]]
+
+''' The `.copy()` method in Python is used to create a shallow copy of a list or dictionary, duplicating the top-level structure while keeping references to nested objects. 
+It duplicates the top-level structure, but references inside (like sublists or nested dicts) still point to the same memory location as the original.'''
+b=a.copy()
+
+#print the address of element
+
+print('a id:',id(a))
+print('b id:',id(b))
+
+#print the address of nested element
+
+print('a[0][0]:',id(a[0][0]))
+print('b[0][0]:',id(b[0][0]))
+
+a[0][0]='test'
+
+#print the list
+print('a-',a)
+print('b-',b)
+
+#Example of deep copy 
+
+import copy
+''' deepcopy() is a function from Python’s copy module that recursively clones every object inside the original structure. 
+This ensures that even nested objects are independently duplicated.'''
+c=copy.deepcopy(a)
+
+#address of a and c
+
+print('A id -',id(a))
+print('C id -', id(c))
+
+#print the nested elemt address
+print('a[0][0] id -',id(a[0][0]))
+print('c[0][0] id -',id(c[0][0]))
+
+a[0][0]='retest'
+
+print('a-',a)
+print('c-',c)  
